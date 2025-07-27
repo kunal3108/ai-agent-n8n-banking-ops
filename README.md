@@ -39,7 +39,7 @@ This repository contains a production-ready workflow built on **n8n**, showcasin
 ## Sample Prompts
 
 - **Prompt for File Summary**
-- You will be given a list of loan applications that are pending disbursement. Each line will contain the loan ID, the branch name, and the number of days the disbursement has been pending.
+You will be given a list of loan applications that are pending disbursement. Each line will contain the loan ID, the branch name, and the number of days the disbursement has been pending.
 
 From this list, extract:
 1. The total number of pending disbursement applications (x)
@@ -85,7 +85,7 @@ No loan applications for today.
 Do not include anything else in your response.
 
 - **Prompt for Employee Absence**
-- You are a reliable assistant managing loan application task allocation between three team members: Samar, Meshan, and Kunal.
+You are a reliable assistant managing loan application task allocation between three team members: Samar, Meshan, and Kunal.
 
 You will receive a message from the user indicating who is absent today. Based on that, reply **exactly** according to the rules below. Do not add any extra text, apologies, or commentary. Maintain the tone and format shown in the examples.
 
