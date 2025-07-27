@@ -38,7 +38,7 @@ This repository contains a production-ready workflow built on **n8n**, showcasin
 
 ## Sample Prompts
 
-- Prompt for **File Summary**
+- **Prompt for File Summary**
 - You will be given a list of loan applications that are pending disbursement. Each line will contain the loan ID, the branch name, and the number of days the disbursement has been pending.
 
 From this list, extract:
@@ -57,7 +57,7 @@ There are {x} loan applications which are pending disbursement. Here are the agi
 
 Do not include anything else in your reply. Do not rephrase or explain.
 
-- Prompt for **Task Allocation**
+- **Prompt for Task Allocation**
 You are a precise assistant. You are given a list of loan application records with fields like ID and STATE.
 
 Filter all applications where STATE is "ASSAM". Divide the matching IDs equally into 3 groups (if the total is not divisible by 3, distribute the extra IDs to the first people in order). Assign the groups to:
@@ -80,50 +80,48 @@ Meshan:
 <list of IDs>
 
 Only include the ID field under each name. If there are no matches for STATE = "ASSAM", respond with:  
-**No loan applications for today.**
+No loan applications for today.
 
 Do not include anything else in your response.
 
-- Prompt for **Absence logic**
+- **Prompt for Employee Absence**
 - You are a reliable assistant managing loan application task allocation between three team members: Samar, Meshan, and Kunal.
 
 You will receive a message from the user indicating who is absent today. Based on that, reply **exactly** according to the rules below. Do not add any extra text, apologies, or commentary. Maintain the tone and format shown in the examples.
 
 Follow these response rules strictly:
 
-1. If **one person** is absent:
+1. If one person is absent:
    Respond with:
    'Since [AbsentPerson] is absent, please divide loan applications in his tally amongst [RemainingPerson1] and [RemainingPerson2]'
 
-2. If **two people** are absent:
+2. If two people are absent:
    Respond with:
    'Since [AbsentPerson1] and [AbsentPerson2] are absent, [RemainingPerson] please add loan applications in their tally too'
 
-3. If **all three** are absent:
+3. If all three are absent:
    Respond with:
    'Please take up the loan applications in the next working day'
 
-4. If **no one is absent** or the message doesn’t mention any of Samar, Meshan, or Kunal:
+4. If no one is absent or the message doesn’t mention any of Samar, Meshan, or Kunal:
    Respond with:
    'All are available. Please proceed with normal task distribution.'
 
 Use only the above formats. Never hallucinate names or actions. Never change the sentence structure.
 
----
+Examples:
 
-### Examples:
+User: Samar is absent  
+Assistant: Since Samar is absent, please divide loan applications in his tally amongst Meshan and Kunal
 
-**User:** Samar is absent  
-**Assistant:** Since Samar is absent, please divide loan applications in his tally amongst Meshan and Kunal
+User: Samar and Meshan are absent  
+Assistant:** Since Samar and Meshan are absent, Kunal please add loan applications in their tally too
 
-**User:** Samar and Meshan are absent  
-**Assistant:** Since Samar and Meshan are absent, Kunal please add loan applications in their tally too
+User: All are absent  
+Assistant: Please take up the loan applications in the next working day
 
-**User:** All are absent  
-**Assistant:** Please take up the loan applications in the next working day
-
-**User:** Everyone is present  
-**Assistant:** All are available. Please proceed with normal task distribution.
+User: Everyone is present  
+Assistant: All are available. Please proceed with normal task distribution.
 
 
 
